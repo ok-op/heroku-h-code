@@ -21,7 +21,7 @@ from .helper.ext_utils.telegraph_helper import telegraph
 
 def stats(update, context):
     if ospath.exists('.git'):
-        last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd <b>From</b> %cr'"], shell=True).decode()
+        last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd <b>⇛ From</b> %cr'"], shell=True).decode()
     else:
         last_commit = 'No UPSTREAM_REPO'
     currentTime = get_readable_time(time() - botStartTime)
@@ -37,18 +37,18 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>Commit Date:</b> {last_commit}\n\n'\
-            f'<b>Bot Uptime:</b> {currentTime}\n\n'\
-            f'<b>Total Disk Space:</b> {total}\n'\
-            f'<b>Used:</b> {used} | <b>Free:</b> {free}\n\n'\
-            f'<b>Up:</b> {sent} | '\
-            f'<b>Down:</b> {recv}\n\n'\
-            f'<b>CPU:</b> {cpuUsage}% | '\
-            f'<b>RAM:</b> {mem_p}% | '\
-            f'<b>DISK:</b> {disk}%\n\n'\
-            f'<b>Total Memory:</b> {mem_t}\n'\
-            f'<b>Free:</b> {mem_a} | '\
-            f'<b>Used:</b> {mem_u}\n\n'
+    stats = f'<b>⇛ Cᴏᴍᴍɪᴛ Dᴀᴛᴇ:</b> {last_commit}\n\n'\
+            f'<b>⇛ Bᴏᴛ Uᴘᴛɪᴍᴇ:</b> {currentTime}\n\n'\
+            f'<b>⇛ Tᴏᴛᴀʟ Dɪsᴋ:</b> {total}\n'\
+            f'<b>⇛ Usᴇᴅ:</b> {used} | <b>Fʀᴇᴇ:</b> {free}\n\n'\
+            f'<b>⇛ Uᴘ:</b> {sent} | '\
+            f'<b>⇛ Dᴏᴡɴ:</b> {recv}\n\n'\
+            f'<b>⇛ Cᴘᴜ:</b> {cpuUsage}% | '\
+            f'<b>⇛ Rᴀᴍ:</b> {mem_p}% | '\
+            f'<b>⇛ Dɪsᴋ:</b> {disk}%\n\n'\
+            f'<b>⇛ Tᴏᴛᴀʟ Mᴇᴍᴏʀʏ:</b> {mem_t}\n'\
+            f'<b>⇛ Fʀᴇᴇ:</b> {mem_a} | '\
+            f'<b>⇛ Usᴇᴅ:</b> {mem_u}\n\n'
     sendMessage(stats, context.bot, update.message)
 
 
@@ -59,14 +59,14 @@ def start(update, context):
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive or to telegram!
+Powered Master ●✤◄ 𝐖𝐃 𝐙𝐎𝐍𝐄  ►✤● is online now 😈 | Use @Opleech for mirror games 💚. ❌U can't use me for mirror or leech games❌.
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not an Authorized user, deploy your own helios-mirror-leech bot', context.bot, update.message, reply_markup)
+        sendMarkup('Not an Authorized user, ping to my owner King Farooq', context.bot, update.message, reply_markup)
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting...", context.bot, update.message)
+    restart_message = sendMessage("Restarting●●●", context.bot, update.message)
     if Interval:
         Interval[0].cancel()
         Interval.clear()
@@ -152,7 +152,7 @@ Hei, Need Help!!
 '''
 try:
     help = telegraph.create_page(
-        title='Helios-Mirror Help',
+        title='✤◄ Farooq ►✤ Help',
         content=help_string_telegraph,
     )["path"]
 except Exception as err:
@@ -160,7 +160,7 @@ except Exception as err:
     pass
 def bot_help(update, context):
     button = ButtonMaker()
-    button.buildbutton("Click Here", f"https://graph.org/{help}")
+    button.buildbutton("❖ Hey Click Here ❖", f"https://graph.org/{help}")
     reply_markup = button.build_menu(1)
     sendMarkup(help_string, context.bot, update.message, reply_markup)
 def main():
@@ -172,15 +172,15 @@ def main():
                 if ospath.isfile(".restartmsg"):
                     with open(".restartmsg") as f:
                         chat_id, msg_id = map(int, f)
-                    msg = 'Restarted Successfully!'
+                    msg = '❖ Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!'
                 else:
-                    msg = 'Bot Restarted!'
+                    msg = '❖ Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ!'
                 for tag, links in data.items():
                      msg += f"\n\n{tag}: "
                      for index, link in enumerate(links, start=1):
                          msg += f" <a href='{link}'>{index}</a> |"
                          if len(msg.encode()) > 4000:
-                             if 'Restarted Successfully!' in msg and cid == chat_id:
+                             if '❖ Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!' in msg and cid == chat_id:
                                  bot.editMessageText(msg, chat_id, msg_id, parse_mode='HTML', disable_web_page_preview=True)
                                  osremove(".restartmsg")
                              else:
@@ -189,7 +189,7 @@ def main():
                                  except Exception as e:
                                      LOGGER.error(e)
                              msg = ''
-                if 'Restarted Successfully!' in msg and cid == chat_id:
+                if '❖ Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!' in msg and cid == chat_id:
                      bot.editMessageText(msg, chat_id, msg_id, parse_mode='HTML', disable_web_page_preview=True)
                      osremove(".restartmsg")
                 else:
@@ -201,12 +201,12 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted Successfully!", chat_id, msg_id)
+        bot.edit_message_text("❖ Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!", chat_id, msg_id)
         osremove(".restartmsg")
     elif not notifier_dict and AUTHORIZED_CHATS:
         for id_ in AUTHORIZED_CHATS:
             try:
-                bot.sendMessage(id_, "Bot Restarted!", 'HTML')
+                bot.sendMessage(id_, "❖ Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ!", 'HTML')
             except Exception as e:
                 LOGGER.error(e)
 
