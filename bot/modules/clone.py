@@ -31,8 +31,8 @@ def _clone(message, bot):
             b_uname = bot_d.username
             uname = message.from_user.mention_html(message.from_user.first_name)
             botstart = f"http://t.me/{b_uname}"
-            buttons.buildbutton("Click Here to Start Me", f"{botstart}")
-            startwarn = f"<b>Dear {uname}, Start me in PM to use me.</b>"
+            buttons.buildbutton("🌼 Hey Start Me 🌼", f"{botstart}")
+            startwarn = f"<b>🌺 Dear {uname}, Start me in PM to use me.</b>"
             mesg = sendMarkup(startwarn, bot, message, buttons.build_menu(2))
             sleep(15)
             mesg.delete()
@@ -104,11 +104,12 @@ def _clone(message, bot):
             result, button = gd.clone(link)
             deleteMessage(bot, msg)
             if BOT_PM and FORCE_BOT_PM:
-                botpm = f"\n\n<b>Hey {tag}!, I have sent your cloned links in PM.</b>\n"
+                botpm = f"\n\n<b>🌺 Hey {tag} Clone complete in PM.</b>\n"
+                botpm += f"<b>\n🔔 Stay away from Angel</b>\n"
                 buttons = ButtonMaker()
                 b_uname = bot.get_me().username
                 botstart = f"http://t.me/{b_uname}"
-                buttons.buildbutton("View links in PM", f"{botstart}")
+                buttons.buildbutton("🌼 Hey links in PM 🌼", f"{botstart}")
                 sendMarkup(result + botpm, bot, message, buttons.build_menu(2))
                 message.delete()
                 reply_to = message.reply_to_message
@@ -133,11 +134,12 @@ def _clone(message, bot):
                     del Interval[0]
                     delete_all_messages()
                     if BOT_PM and FORCE_BOT_PM:
-                        botpm = f"\n\n<b>Hey {tag}!, I have sent your cloned links in PM.</b>\n"
+                        botpm = f"\n\n<b>🌺 Hey {tag} Clone complete in PM.</b>\n"
+                        botpm += f"<b>\n🔔 Stay away from Angel</b>\n"
                         buttons = ButtonMaker()
                         b_uname = bot.get_me().username
                         botstart = f"http://t.me/{b_uname}"
-                        buttons.buildbutton("View links in PM", f"{botstart}")
+                        buttons.buildbutton("🌼 Hey links in PM 🌼", f"{botstart}")
                         sendMarkup(result + botpm, bot, message, buttons.build_menu(2))
                         message.delete()
                         reply_to = message.reply_to_message
@@ -148,7 +150,7 @@ def _clone(message, bot):
                     update_all_messages()
             except IndexError:
                 pass
-        cc = f'\n\n<b>cc: </b>{tag}'
+        cc = f'\n\n<b>◉ cc: </b>{tag}'
         if button in ["cancelled", ""]:
             sendMessage(f"{tag} {result}", bot, message)
         else:
