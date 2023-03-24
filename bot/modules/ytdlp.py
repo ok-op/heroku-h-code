@@ -21,7 +21,7 @@ def _ytdl(bot, message, isZip=False, isLeech=False):
     buttons = ButtonMaker()
     if BOT_PM and message.chat.type != 'private':
         try:
-            msg1 = f'Added your Requested link to Download\n'
+            msg1 = f'🌼 Added your Requested link to Download\n'
             send = bot.sendMessage(user_id, text=msg1)
             send.delete()
         except Exception as e:
@@ -30,8 +30,8 @@ def _ytdl(bot, message, isZip=False, isLeech=False):
             b_uname = bot_d.username
             uname = message.from_user.mention_html(message.from_user.first_name)
             botstart = f"http://t.me/{b_uname}"
-            buttons.buildbutton("Click Here to Start Me", f"{botstart}")
-            startwarn = f"<b>Dear {uname}, Start me in PM to use me.</b>"
+            buttons.buildbutton("🌼 Hey Start Me 🌼", f"{botstart}")
+            startwarn = f"<b>🌺 Hey {uname}, Start me in PM to use me.</b>"
             mesg = sendMarkup(startwarn, bot, message, buttons.build_menu(2))
             sleep(15)
             mesg.delete()
