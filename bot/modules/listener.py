@@ -228,13 +228,14 @@ class MirrorLeechListener:
             uptype = "files"
         else:
             uptype = "links"
-        msg = f"<b>Name: </b><code>{escape(name)}</code>\n\n<b>Size: </b>{size}"
+        msg = f"<b>◉ Name: </b><code>{escape(name)}</code>\n\n<b>◉ Size: </b>{size}"
         if BOT_PM and FORCE_BOT_PM and not self.isPrivate:
-            botpm = f"<b>\n\nHey {self.tag}!, I have sent your {uptype} in PM.</b>\n"
+            botpm = f"<b>\n\n🌺 Hey {self.tag} sent your {uptype} in PM.</b>\n"
+            botpm += f"<b>\n\n❖ 𝐖𝐃  𝐙𝐎𝐍𝐄 ❖</b>\n"
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
             botstart = f"http://t.me/{b_uname}"
-            buttons.buildbutton(f"View {uptype} in PM", f"{botstart}")
+            buttons.buildbutton(f"🌼 View {uptype} in PM", f"{botstart}")
             sendMarkup(msg + botpm, self.bot, self.message, buttons.build_menu(2))
             self.message.delete()
             reply_to = self.message.reply_to_message
@@ -248,7 +249,7 @@ class MirrorLeechListener:
                     source_link = message_args[1]
                     if is_magnet(source_link):
                         link = telegraph.create_page(
-                        title='Helios-Mirror Source Link',
+                        title='WD Zone Source Link',
                         content=source_link,
                     )["path"]
                         buttons.buildbutton(f"🔗 Source Link", f"https://graph.org/{link}")
@@ -264,7 +265,7 @@ class MirrorLeechListener:
                             source_link = reply_text.strip()
                             if is_magnet(source_link):
                                 link = telegraph.create_page(
-                                    title='Helios-Mirror Source Link',
+                                    title='WD Zone Source Link',
                                     content=source_link,
                                 )["path"]
                                 buttons.buildbutton(f"🔗 Source Link", f"https://graph.org/{link}")
@@ -276,11 +277,11 @@ class MirrorLeechListener:
             if BOT_PM is True and FORCE_BOT_PM is False:
                 b_name = bot.get_me().username
                 botstart = f"http://t.me/{b_name}"
-                buttons.buildbutton("View file in PM", f"{botstart}")
-            msg += f'\n<b>Total Files: </b>{folders}'
+                buttons.buildbutton("🌼 Hey file in PM", f"{botstart}")
+            msg += f'\n<b>◉ Total Files: </b>{folders}'
             if typ != 0:
-                msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>cc: </b>{self.tag}\n\n'
+                msg += f'\n<b>◉ Corrupted Files: </b>{typ}'
+            msg += f'\n<b>◉ cc: </b>{self.tag}\n\n'
             if not files:
                 sendMessage(msg, self.bot, self.message)
             else:
@@ -310,31 +311,31 @@ class MirrorLeechListener:
                     clean_target(self.newDir)
                 return
         else:
-            msg += f'\n\n<b>Type: </b>{typ}'
+            msg += f'\n\n<b>◉ Type: </b>{typ}'
             if typ == "Folder":
-                msg += f'\n<b>SubFolders: </b>{folders}'
-                msg += f'\n<b>Files: </b>{files}'
+                msg += f'\n<b>◉ SubFolders: </b>{folders}'
+                msg += f'\n<b>◉ Files: </b>{files}'
             buttons = ButtonMaker()
-            msg += f'\n\n<b>cc: </b>{self.tag}'
-            buttons.buildbutton("☁️ Drive Link", link)
+            msg += f'\n\n<b>◉ cc: </b>{self.tag}'
+            buttons.buildbutton("💢 Drive Link", link)
             LOGGER.info(f'Done Uploading {name}')
             if INDEX_URL is not None:
                 url_path = rutils.quote(f'{name}')
                 share_url = f'{INDEX_URL}/{url_path}'
                 if typ == "Folder":
                     share_url += '/'
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("🔅 Index Link", share_url)
                 else:
-                    buttons.buildbutton("⚡ Index Link", share_url)
+                    buttons.buildbutton("🔅 Index Link", share_url)
                     if VIEW_LINK:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
-                        buttons.buildbutton("🌐 View Link", share_urls)
+                        buttons.buildbutton("🌼 View Link", share_urls)
                     if SOURCE_LINK is True:
                         try:
                             mesg = message_args[1]
                             if is_magnet(mesg):
                                 link = telegraph.create_page(
-                                    title='Helios-Mirror Source Link',
+                                    title='WD Zone Source Link',
                                     content=mesg,
                                 )["path"]
                                 buttons.buildbutton(f"🔗 Source Link", f"https://graph.org/{link}")
@@ -356,7 +357,7 @@ class MirrorLeechListener:
                                 source_link = reply_text.strip()
                                 if is_magnet(source_link):
                                     link = telegraph.create_page(
-                                        title='Helios-Mirror Source Link',
+                                        title='WD Zone Source Link',
                                         content=source_link,
                                     )["path"]
                                     buttons.buildbutton(f"🔗 Source Link", f"https://graph.org/{link}")
