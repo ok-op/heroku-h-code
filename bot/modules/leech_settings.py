@@ -22,25 +22,25 @@ def getleechinfo(from_user):
         and AS_DOCUMENT
     ):
         ltype = "DOCUMENT"
-        buttons.sbutton("Send As Media", f"leechset {user_id} med")
+        buttons.sbutton("◉ Send As Media", f"leechset {user_id} med")
     else:
         ltype = "MEDIA"
-        buttons.sbutton("Send As Document", f"leechset {user_id} doc")
+        buttons.sbutton("◉ Send As Document", f"leechset {user_id} doc")
 
     if ospath.exists(thumbpath):
         thumbmsg = "Exists"
-        buttons.sbutton("Delete Thumbnail", f"leechset {user_id} thumb")
+        buttons.sbutton("✘Delete Thumbnail", f"leechset {user_id} thumb")
     else:
         thumbmsg = "Not Exists"
 
     if AUTO_DELETE_MESSAGE_DURATION == -1:
-        buttons.sbutton("Close", f"leechset {user_id} close")
+        buttons.sbutton("✘ Close", f"leechset {user_id} close")
 
     button = buttons.build_menu(1)
 
-    text = f"<u>Leech Settings for <a href='tg://user?id={user_id}'>{name}</a></u>\n"\
-           f"Leech Type <b>{ltype}</b>\n"\
-           f"Custom Thumbnail <b>{thumbmsg}</b>"
+    text = f"<u>✔️ Leech Settings for <a href='tg://user?id={user_id}'>{name}</a></u>\n"\
+           f"✔️ Leech Type <b>{ltype}</b>\n"\
+           f"✔️ Custom Thumbnail <b>{thumbmsg}</b>"
     return text, button
 
 def editLeechType(message, query):
@@ -107,7 +107,7 @@ def setThumb(update, context):
         osremove(photo_dir)
         if DB_URI is not None:
             DbManger().user_save_thumb(user_id, des_dir)
-        msg = f"Custom thumbnail saved for {update.message.from_user.mention_html(update.message.from_user.first_name)}."
+        msg = f"✔️Hey thumbnail saved for {update.message.from_user.mention_html(update.message.from_user.first_name)}."
         sendMessage(msg, context.bot, update.message)
     else:
         sendMessage("Reply to a photo to save custom thumbnail.", context.bot, update.message)
