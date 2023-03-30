@@ -365,7 +365,7 @@ class GoogleDriveHelper:
                     buttons.buildbutton("🔅 Index Link", url)
                     if VIEW_LINK:
                         urls = f'{INDEX_URL}/{url_path}?a=view'
-                        buttons.buildbutton("🌼 View Link", urls)
+                        buttons.buildbutton("🌼 View Link 🌼", urls)
                     if SOURCE_LINK is True:
                         buttons.buildbutton(f"🔗 Source Link", link)
         except Exception as err:
