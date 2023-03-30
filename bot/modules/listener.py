@@ -235,7 +235,7 @@ class MirrorLeechListener:
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
             botstart = f"http://t.me/{b_uname}"
-            buttons.buildbutton(f"🌼 View {uptype} in PM", f"{botstart}")
+            buttons.buildbutton(f"🌼 View {uptype} in PM 🌼", f"{botstart}")
             sendMarkup(msg + botpm, self.bot, self.message, buttons.build_menu(2))
             self.message.delete()
             reply_to = self.message.reply_to_message
@@ -277,7 +277,7 @@ class MirrorLeechListener:
             if BOT_PM is True and FORCE_BOT_PM is False:
                 b_name = bot.get_me().username
                 botstart = f"http://t.me/{b_name}"
-                buttons.buildbutton("🌼 Hey file in PM", f"{botstart}")
+                buttons.buildbutton("🌼 Hey file in PM 🌼", f"{botstart}")
             msg += f'\n<b>◉ Total Files: </b>{folders}'
             if typ != 0:
                 msg += f'\n<b>◉ Corrupted Files: </b>{typ}'
@@ -329,7 +329,7 @@ class MirrorLeechListener:
                     buttons.buildbutton("🔅 Index Link", share_url)
                     if VIEW_LINK:
                         share_urls = f'{INDEX_URL}/{url_path}?a=view'
-                        buttons.buildbutton("🌼 View Link", share_urls)
+                        buttons.buildbutton("🌼 View Link 🌼", share_urls)
                     if SOURCE_LINK is True:
                         try:
                             mesg = message_args[1]
