@@ -37,18 +37,18 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>⇛ Cᴏᴍᴍɪᴛ Dᴀᴛᴇ:</b> {last_commit}\n\n'\
-            f'<b>⇛ Bᴏᴛ Uᴘᴛɪᴍᴇ:</b> {currentTime}\n\n'\
-            f'<b>⇛ Tᴏᴛᴀʟ Dɪsᴋ:</b> {total}\n'\
-            f'<b>⇛ Usᴇᴅ:</b> {used} | <b>Fʀᴇᴇ:</b> {free}\n\n'\
-            f'<b>⇛ Uᴘ:</b> {sent} | '\
-            f'<b>⇛ Dᴏᴡɴ:</b> {recv}\n\n'\
-            f'<b>⇛ Cᴘᴜ:</b> {cpuUsage}% | '\
-            f'<b>⇛ Rᴀᴍ:</b> {mem_p}% | '\
-            f'<b>⇛ Dɪsᴋ:</b> {disk}%\n\n'\
-            f'<b>⇛ Tᴏᴛᴀʟ Mᴇᴍᴏʀʏ:</b> {mem_t}\n'\
-            f'<b>⇛ Fʀᴇᴇ:</b> {mem_a} | '\
-            f'<b>⇛ Usᴇᴅ:</b> {mem_u}\n\n'
+    stats = f'<b>✥✑ Fixed Dᴀᴛᴇ:</b> {last_commit}\n\n'\
+            f'<b>✥✑ Bᴏᴛ Uᴘᴛɪᴍᴇ:</b> {currentTime}\n\n'\
+            f'<b>✥✑ Tᴏᴛᴀʟ Dɪsᴋ:</b> {total}\n'\
+            f'<b>✥✑ Usᴇᴅ:</b> {used} | <b>Fʀᴇᴇ:</b> {free}\n\n'\
+            f'<b>✥✑ Uᴘ:</b> {sent} | '\
+            f'<b>✥✑ Dᴏᴡɴ:</b> {recv}\n\n'\
+            f'<b>✥✑ Cᴘᴜ:</b> {cpuUsage}% | '\
+            f'<b>✥✑ Rᴀᴍ:</b> {mem_p}% | '\
+            f'<b>✥✑ Dɪsᴋ:</b> {disk}%\n\n'\
+            f'<b>✥✑ Tᴏᴛᴀʟ Mᴇᴍᴏʀʏ:</b> {mem_t}\n'\
+            f'<b>✥✑ Fʀᴇᴇ:</b> {mem_a} | '\
+            f'<b>✥✑ Usᴇᴅ:</b> {mem_u}\n\n'
     sendMessage(stats, context.bot, update.message)
 
 
