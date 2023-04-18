@@ -116,8 +116,8 @@ def get_progress_bar_string(status):
     p = 0 if total == 0 else round(completed * 100 / total)
     p = min(max(p, 0), 100)
     cFull = p // 8
-    p_str = '▰' * cFull
-    p_str += '▱' * (12 - cFull)
+    p_str = '★' * cFull
+    p_str += '☆' * (12 - cFull)
     p_str = f"∊{p_str}∋"
     return p_str
 
@@ -159,7 +159,7 @@ def get_readable_message():
             else:
                 msg += ''
             msg += f"\n<code>/{BotCommands.CancelMirror} {download.gid()}</code>"
-            msg += f"\n<b>   ⊱✤┅┅┅●( 𝐖𝐃 𝐙𝐎𝐍𝐄 )●┅┅┅✤⊰</b>"
+            msg += f"\n<b>   ⊱✤┅┅┅●( 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐨𝐋 )●┅┅┅✤⊰</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
@@ -186,7 +186,7 @@ def get_readable_message():
                     up_speed += float(spd.split('K')[0]) * 1024
                 elif 'M' in spd:
                     up_speed += float(spd.split('M')[0]) * 1048576
-        bmsg = f"\n◎▬▬▬▬▬◎▬▬▬▬▬▬◎"            
+        bmsg = f"\n◎ 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐨𝐋 ◎"            
         bmsg += f"\n<b>◉ Cᴘᴜ:</b> {cpu_percent()}% | <b>◉ Fʀᴇᴇ:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
         bmsg += f"\n<b>◉ Rᴀᴍ:</b> {virtual_memory().percent}% | <b>◉ Uᴘᴛɪᴍᴇ:</b> {get_readable_time(time() - botStartTime)}"
         bmsg += f"\n<b>⇓ Dʟ:</b> {get_readable_file_size(dl_speed)}/s | <b>⇑ Uʟ:</b> {get_readable_file_size(up_speed)}/s"
