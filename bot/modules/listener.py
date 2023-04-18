@@ -231,7 +231,7 @@ class MirrorLeechListener:
         msg = f"<b>◉ Name: </b><code>{escape(name)}</code>\n\n<b>◉ Size: </b>{size}"
         if BOT_PM and FORCE_BOT_PM and not self.isPrivate:
             botpm = f"<b>\n\n🌺 Hey {self.tag} sent your {uptype} in PM.</b>\n"
-            botpm += f"<b>\n\n❖ 𝐖𝐃  𝐙𝐎𝐍𝐄 ❖</b>\n"
+            botpm += f"<b>\n\n❖ 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐨𝐋 ❖</b>\n"
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
             botstart = f"http://t.me/{b_uname}"
