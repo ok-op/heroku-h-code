@@ -105,7 +105,7 @@ def _clone(message, bot):
             deleteMessage(bot, msg)
             if BOT_PM and FORCE_BOT_PM:
                 botpm = f"\n\n<b>🌺 Hey {tag} Clone complete in PM.</b>\n"
-                botpm += f"<b>\n🔔 Stay away from 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐨𝐋</b>\n"
+                botpm += f"<b>\n🔔 Stay away from 𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋</b>\n"
                 buttons = ButtonMaker()
                 b_uname = bot.get_me().username
                 botstart = f"http://t.me/{b_uname}"
@@ -135,7 +135,7 @@ def _clone(message, bot):
                     delete_all_messages()
                     if BOT_PM and FORCE_BOT_PM:
                         botpm = f"\n\n<b>🌺 Hey {tag} Clone complete in PM.</b>\n"
-                        botpm += f"<b>\n🔔 Stay away from 𝐀ɴɢᴇʟ ✘ 𝐎ᴘ 𝐋𝐨𝐋</b>\n"
+                        botpm += f"<b>\n🔔 Stay away from 𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋</b>\n"
                         buttons = ButtonMaker()
                         b_uname = bot.get_me().username
                         botstart = f"http://t.me/{b_uname}"
