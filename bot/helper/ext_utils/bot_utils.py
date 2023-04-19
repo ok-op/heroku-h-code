@@ -159,7 +159,7 @@ def get_readable_message():
             else:
                 msg += ''
             msg += f"\n<code>/{BotCommands.CancelMirror} {download.gid()}</code>"
-            msg += f"\n<b>⊱✤┅┅┅●( 𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋 )●┅┅┅✤⊰</b>"
+            msg += f"\n<b>⊱✤┅●( 𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋 )●┅✤⊰</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
@@ -191,7 +191,7 @@ def get_readable_message():
         bmsg += f"\n<b>◉ Rᴀᴍ:</b> {virtual_memory().percent}% | <b>◉ Uᴘᴛɪᴍᴇ:</b> {get_readable_time(time() - botStartTime)}"
         bmsg += f"\n<b>⇓ Dʟ:</b> {get_readable_file_size(dl_speed)}/s | <b>⇑ Uʟ:</b> {get_readable_file_size(up_speed)}/s"
         buttons = ButtonMaker()
-        buttons.sbutton("🦋𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋 🦋", str(FOUR))
+        buttons.sbutton("🦋 𝐀ɴɢᴇʟ✘𝐎ᴘ 𝐋𝐨𝐋 🦋", str(FOUR))
         sbutton = buttons.build_menu(1)
         if STATUS_LIMIT is not None and tasks > STATUS_LIMIT:
             msg += f"<b>◉ Page:</b> {PAGE_NO}/{pages} | <b>◉ Tasks:</b> {tasks}\n"
