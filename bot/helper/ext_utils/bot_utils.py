@@ -123,7 +123,7 @@ def get_progress_bar_string(status):
 
 def get_readable_message():
     with download_dict_lock:
-        msg = f"<b>● Pᴏᴡᴇʀᴇᴅ Bʏ 🌶 INDIA 🌶</b>\n\n"
+        msg = f"<b>● Pᴏᴡᴇʀᴇᴅ Bʏ 𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭</b>\n\n"
         if STATUS_LIMIT is not None:
             tasks = len(download_dict)
             global pages
